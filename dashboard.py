@@ -21,8 +21,8 @@ def create_timely_rentals_df(df: pd.DataFrame):
     timely_rentals_df = df.groupby(by='Time').cnt.sum().reset_index()
     return timely_rentals_df
 
-hour_df = pd.read_csv('C:/Users/AKMAL/Documents/python_2024/Dicoding_Data_Science/submission/dashboard/hour_cleaned_df.csv')
-day_df = pd.read_csv('C:/Users/AKMAL/Documents/python_2024/Dicoding_Data_Science/submission/dashboard/day_cleaned_df.csv')
+hour_df = pd.read_csv('hour_cleaned_df.csv')
+day_df = pd.read_csv('day_cleaned_df.csv')
 
 # Normalize temperature and humidity in hourly data
 hour_df['temp'] = (hour_df['temp'] - hour_df['temp'].min()) / (hour_df['temp'].max() - hour_df['temp'].min())
