@@ -62,7 +62,7 @@ seasonly_rentals_df = create_seasonly_rentals_df(access_day_df)
 hourly_rentals_df = create_hourly_rentals_df(access_hour_df)
 timely_rentals_df = create_timely_rentals_df(access_hour_df)
 
-st.title('Bike Rentals 🚴‍♂️')
+st.title('Bike Rentals Dashboard 🚴‍♂️')
 st.markdown("### Overview")
 st.markdown(
     "This dashboard provides insights into bike rental data, including seasonal trends, hourly usage, and environmental factors like temperature and humidity."
