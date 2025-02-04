@@ -4,7 +4,7 @@ import seaborn as sns
 import streamlit as st
 from babel.numbers import format_number
 
-sns.set(style='whitegrid', palette='pastel')
+sns.set(style='darkgrid')
 
 ## Create Seasonly df
 def create_seasonly_rentals_df(df: pd.DataFrame):
@@ -75,7 +75,7 @@ sns.barplot(
     data=seasonly_rentals_df.sort_values(by='cnt', ascending=False),
     x='season',
     y='cnt',
-    palette='coolwarm',
+    palette='Blues_r',
     ax=ax,
     hue='season'
 )
@@ -93,7 +93,7 @@ ax.plot(
     access_day_df['dteday'],
     access_day_df['cnt'],
     linewidth=2,
-    color='#FF6347'
+    color='#08519C'
 )
 ax.set_title('Daily Rentals Trend', fontsize=18)
 ax.set_xlabel('Date', fontsize=14)
@@ -103,7 +103,7 @@ st.pyplot(fig)
 # Timely Rentals
 st.subheader('Rentals by Time of Day')
 timely_rentals_df['Time'] = pd.Categorical(timely_rentals_df['Time'], ['Morning', 'Day', 'Afternoon', 'Evening'])
-colors = ["#FF6347", "#FF6347", "#FF6347", "#FF6347"]
+colors = ["#08519C", "#08519C", "#08519C", "#08519C"]
 fig, ax = plt.subplots(figsize=(10, 5))
 sns.barplot(
     data=timely_rentals_df.sort_values(by='Time', ascending=True),
@@ -124,7 +124,7 @@ sns.barplot(
     data=hourly_rentals_df.sort_values(by='cnt', ascending=False).head(5),
     x='hr',
     y='cnt',
-    palette='coolwarm',
+    palette='Blues_r',
     hue='hr',
     ax=ax
 )
